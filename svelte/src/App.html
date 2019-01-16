@@ -1,0 +1,53 @@
+<main>
+	<h1>Svelte app</h1>
+	<h2>Video element</h2>
+	<Example title='Video player' code='<Video url="/video.mov" />'>
+		<Video url="/video.mov" />
+	</Example>
+	<!-- Not getting any help from syntax highlighting here for {false}, also wrong escaping (compared to JSX) -->
+	<Example title='Video player' code='<Video controls={false} url="/video.mov" />'>
+		<Video controls={false} url="/video.mov" />
+	</Example>
+
+	<Example title='Video player' code='<Video controls={false} url="/video.mov" />'>
+		<Video controls={false} url="/video.mov">
+			<!--
+				I don't think I can trigger a play event for
+				this specific Video from here without a store
+				And I can't listen to those events in Video
+				Error: <slot> cannot have directives
+			-->
+			<div class="videoControls" slot="controls">> Play!</div>
+		</Video>
+	</Example>
+</main>
+
+<script>
+export default {
+	components: {
+		Video: './Video.html',
+		Example: './Example.html',
+	}
+};
+</script>
+
+<style>
+:global(body) {
+	background-color: #DDDDDD;
+}
+
+main {
+	max-width: 670px;
+	margin: 10px auto;
+}
+
+.videoControls {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #FF851B;
+	color: white;
+	padding: 8px;
+}
+</style>

@@ -1,0 +1,45 @@
+<!--
+  wanted to programatically access <slot> and spell it out
+  with {@html} but that just won't work. Getting Angular vibes.
+
+  With the same principle, I can't create for example syntax-highlighter
+
+  Slotted components https://github.com/sveltejs/svelte/issues/1037
+  could help a bit
+-->
+
+<div class="example">
+  <header>
+    <h3>{title}</h3>
+    <code>{code}</code>
+  </header>
+  <div class="exampleBody">
+  <!-- you can't capture/react to slot's events, as they are in the context of parent component -->
+    <slot />
+  </div>
+</div>
+
+<style>
+.example {
+  background: white;
+  box-shadow: 2px 2px 16px #bbb;
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
+header, .exampleBody {
+  padding: 16px;
+}
+.exampleBody {
+  background: #efefef;
+  box-shadow: inset 0 0 6px #ccc;
+  border-top: 1px solid #aaa;
+}
+h3 {
+  margin: 0 0 8px;
+}
+code {
+  background: #001f3f;
+  color: white;
+  padding: 8px;
+}
+</style>

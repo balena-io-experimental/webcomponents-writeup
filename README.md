@@ -55,6 +55,10 @@ Spent quite some time dissecting WCT usage patterns. New libraries and approches
 ## Rant on ideal solution
 Looks like WCT will be very strong for a specific (not requiring theming) Style Guides. I think we could see something like [PatternLab](https://patternlab.io) build only on WCT. The Ideal Library™ should then use pure render functions (so I could choose templating language of my choice) and just compile down to web components that I could drop anywhere.
 
+## Local examples
+Put together a minimal video wrapper component.
+`npm i` and `npm start` or `npm run dev`.
+
 ## Resources
 - Info on integrating WCT with frameworks[https://custom-elements-everywhere.com](https://custom-elements-everywhere.com)
 - [https://www.youtube.com/watch?v=yT-EsESAmgA ](https://www.youtube.com/watch?v=yT-EsESAmgA) SkateJS SSR
